@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+int check_xx(char panel[][15], int y, int x, char object) {	//檢查x軸
+	int stoneCount = 0;
+	for (int i = x - 4; i <= x + 4; i++) 
+	{
+		if (panel[y][i] == object) {
+			stoneCount++;
+			if (stoneCount == 5) 
+				break;
+	
+		}
+		else 
+		{
+			stoneCount = 0;
+		}
+	}
+	if (stoneCount >= 5) 
+	{
+		return 1;
+	}
+	else 
+	{
+		return 0;
+	}
+}
+
+int check_Y(char panel[][15], int y, int x, char object) {	//檢查y軸
+	int stoneCount = 0;
+	for (int i = y - 4; i <= y + 4; i++) 
+	{
+		if (panel[i][x] == object) 
+		{
+			stoneCount++;
+			if (stoneCount == 5) 
+			{
+				break;
+			}
+		}
+		else 
+		{
+			stoneCount = 0;
+		}
+	}
+	if (stoneCount >= 5) 
+	{
+		return 1;
+	}
+	else 
+	{
+		return 0;
+	}
+}
+
+int check_RU(char panel[][15], int y, int x, char object) {	//檢查函數往右上
+	int stoneCount = 0;
+	for (int i = y - 4, j = x - 4; i <= y + 4; i++, j++) 
+	{
+		if (panel[i][j] == object) 
+		{
+			stoneCount++;
+			if (stoneCount == 5) 
+			{
+				break;
+			}
+		}
+		else 
+		{
+			stoneCount = 0;
+		}
+	}
+	if (stoneCount >= 5) 
+	{
+		return 1;
+	}
+	else 
+	{
+		return 0;
+	}
+}
+
+int check_RD(char panel[][15], int y, int x, int object) {	//檢查函數往右下
+	int stoneCount = 0;
+	for (int i = y + 4, j = x - 4; i >= y - 4; i--, j++) 
+	{
+		if (panel[i][j] == object) 
+		{
+			stoneCount++;
+			if (stoneCount == 5) 
+			{
+				break;
+			}
+		}
+		else {
+			stoneCount = 0;
+		}
+	}
+	if (stoneCount >= 5) 
+	{
+		return 1;
+	}
+	else 
+	{
+		return 0;
+	}
+}
