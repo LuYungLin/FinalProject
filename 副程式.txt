@@ -1,3 +1,4 @@
+判斷勝利條件
 #include <stdio.h>
 #include<stdlib.h>
 
